@@ -6,8 +6,9 @@ Write("Введите число: ");
 int a = int.Parse(ReadLine()!);
 int n = 1;
 
-while (n <= a)
+while (n <= a )
 {
-          Write($" {n}");
-          n += 1;
+          if (n % 2 == 0)
+                    Write($" {n}");
+                    n += 1;
 }
