@@ -18,4 +18,4 @@ int.TryParse(ReadLine(), out int by);
 double gipotenusa = Math.Sqrt(Math.Pow((ax - bx), 2) + Math.Pow((ay - by), 2));
 
 
-WriteLine($"Расстояние между точками а и b равно {gipotenusa}");
+WriteLine($"Расстояние между точками а и b равно {gipotenusa:f2}"); // f2 - округление знаков после запятой
