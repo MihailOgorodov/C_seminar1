@@ -20,7 +20,7 @@ int.TryParse(ReadLine(), out int by);
 Write("Введите координаты точки b по оси z: ");
 int.TryParse(ReadLine(), out int bz);
 
-double hypotenuse = Math.Sqrt(Math.Pow((ax - bx), 2) + Math.Pow((ay - by), 2) + Math.Pow((az-bz), 2));
+double hypotenuse = Math.Sqrt(Math.Pow((ax - bx), 2) + Math.Pow((ay - by), 2) + Math.Pow((az - bz), 2));
 
 
 WriteLine($"Расстояние между точками а и b в 3D пространстве равно {hypotenuse:f2}");
