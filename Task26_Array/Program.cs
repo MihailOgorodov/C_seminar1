@@ -46,8 +46,9 @@
 // }
 
 using static System.Console;
+Clear();
 
-int[] arr = GetArray(10);
+int[] arr = GetArray(4);
 int[] arr1 = new int[8];
 
 
