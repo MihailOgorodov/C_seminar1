@@ -3,40 +3,54 @@
 using static System.Console;
 Clear();
 
-int[] Arr1 = GetArray(10);
-PrintArray(Arr1);
+Write("Введи начальное значение отрезка: ");
+int start = int.Parse(ReadLine()!);
+
+Write("Введи конечное значение отрезка: ");
+int finish = int.Parse(ReadLine()!);
+
+int[] array = GetArray(123);
+int countInArray = findCountNumderInArray(array, start, finish);
+Write("Масив: ");
+printArray(array);
 WriteLine();
-WriteLine(FindCountNumbers(Arr1));
+WriteLine($"Колличество найденных элементов в масиве равно: {countInArray}");
 
 
 
 int[] GetArray(int size)
 {
+
           int[] resultArray = new int[size];
-          for (int i = 0; i < resultArray.Length; i++)
+
+          Random random = new Random();
+          for (int i = 0; i < size; i++)
           {
-                    resultArray[i] = new Random().Next(-50, 100);
+                    resultArray[i] = random.Next(0, 100);
           }
+
           return resultArray;
 }
 
-void PrintArray(int[] inArray)
-{
-          Write("[");
-          for (int i = 0; i < inArray.Length - 1; i++)
-          {
-                    Write($"{inArray[i]},");
-          }
-          Write($"{inArray[inArray.Length - 1]}]");
-}
-
-int FindCountNumbers(int[] inArray1)
+int findCountNumderInArray(int[] array, int start, int finish)
 {
           int result = 0;
-          foreach (var i in inArray1)
+
+          foreach (int i in array)
           {
-                    if(i>=10 && i<=99) result++;
-                    
+                    if (start <= i && i <= finish) result++;
           }
+
           return result;
+}
+
+void printArray(int[] array)
+{
+          Write("[");
+          for (int i = 0; i < array.Length - 1; i++)
+          {
+                    Write($"{array[i]}, ");
+          }
+
+          Write($"{array[array.Length - 1]}]");
 }
