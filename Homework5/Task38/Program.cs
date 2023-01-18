@@ -4,7 +4,7 @@
 using static System.Console;
 Clear();
 
-double[] Arr = GetArray(3);
+double[] Arr = GetArray(5);
 PrintArray(Arr);
 WriteLine();
 
@@ -24,7 +24,7 @@ double[] GetArray(int size)
 void PrintArray(double[] inArray)
 {
           Write("[");
-          for (int i = 0; i < inArray.Length; i++)
+          for (int i = 0; i < inArray.Length - 1; i++)
           {
                     Write($"{inArray[i]}  ");
           }
