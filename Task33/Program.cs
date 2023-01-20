@@ -8,6 +8,5 @@ WriteLine(LengthOfTriangleSides(int.Parse(triangleLenght[0]), int.Parse(triangle
 
 bool LengthOfTriangleSides(int a, int b, int c)
 {
-          if (a + b > c && a + c > b && b + c > a) return true;
-          else return false;
+          return (a + b > c && a + c > b && b + c > a);
 }
