@@ -30,3 +30,26 @@ void PrintArray(int[] inArray)
           }
           Write($"{inArray[inArray.Length - 1]}");
 }
+
+// using static System.Console;
+// Clear();
+
+// Write("Введите число: ");
+// int number = int.Parse(ReadLine()!);
+// Fibonachi(number);
+
+// void Fibonachi(int number)
+// {
+// int temp, num1 = 0, num2 = 1;
+// Write($"{num1} {num2} ");
+// for (int i = 2; i < number; i++)
+// {
+// temp = num1 + num2;
+// num1 = num2;
+// num2 = temp;
+// Write($"{num2} ");
+// }
+// }
+
+// int a = 10;
+//WriteLine(Convert.ToString(a,2));
