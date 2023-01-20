@@ -42,15 +42,15 @@ int[] GetArray(int size)
 }
 
 // Метод, который на базе существующего вернет новый перевернутый массив. Его используют, когда исходный массив еще нужен.
-int[] ReverseArray1(int[] inArray)
-{
-          int[] result = new int[inArray.Length];
-          for (int i = 0; i < inArray.Length; i++)
-          {
-                    result[i] = inArray[inArray.Length - 1 - i];
-          }
-          return result;
-}
+// int[] ReverseArray1(int[] inArray)
+// {
+//           int[] result = new int[inArray.Length];
+//           for (int i = 0; i < inArray.Length; i++)
+//           {
+//                     result[i] = inArray[inArray.Length - 1 - i];
+//           }
+//           return result;
+// }
 
 // А если текущий массив больше не нужен, то можно перевернуть элементы внутри этого же массива, без создания нового.
 void ReverseArray2(int[] inArray)
