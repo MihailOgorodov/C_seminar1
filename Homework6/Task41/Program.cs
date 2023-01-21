@@ -5,7 +5,7 @@ using static System.Console;
 Clear();
 
 Write("Введите числа через пробел: ");
-int[] firstArray = GetArray(ReadLine());
+int[] firstArray = GetArray(ReadLine()!);
 
 int numbers = NumberComparison(firstArray);
 WriteLine($"Количество чисел больше нуля -> {numbers}");
