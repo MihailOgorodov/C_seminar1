@@ -9,7 +9,7 @@ using static System.Console;
 Clear();
 
 Write("Введите размер матрицы и диапазон значений через пробел: ");
-int[] parameters= Array.ConvertAll(ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries), int.Parse);
+int[] parameters = Array.ConvertAll(ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries), int.Parse);
 int[,] array = GetMatrixArray(parameters[0], parameters[1], parameters[2], parameters[3]);
 PrintMatrixArray(array);
 WriteLine();
@@ -42,15 +42,27 @@ void PrintMatrixArray(int[,] inArray)
           }
 }
 
+// int SumMatrixElements(int[,] inArray1)
+// {
+//           int resultSum = 0;
+//           for (int i = 0; i < inArray1.GetLength(0); i++)
+//           {
+//                     for (int j = 0; j < inArray1.GetLength(1); j++)
+//                     {
+//                               if (i == j) resultSum += inArray1[i, j];
+//                     }
+//           }
+//           return resultSum;
+// }
+
+// рефакторинг
 int SumMatrixElements(int[,] inArray1)
 {
           int resultSum = 0;
-          for (int i = 0; i < inArray1.GetLength(0); i++)
+          for (int i = 0; i < (inArray1.GetLength(0)<inArray1.GetLength(1)?inArray1.GetLength(0):inArray1.GetLength(1)); i++)
           {
-                    for (int j = 0; j < inArray1.GetLength(1); j++)
-                    {
-                              if (i == j) resultSum += inArray1[i, j];
-                    }
+                    resultSum += inArray1[i, i];
           }
           return resultSum;
 }
+
