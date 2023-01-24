@@ -11,9 +11,14 @@ using static System.Console;
 Clear();
 
 Write("Введите размер матрицы и диапазон значений через пробел: ");
-string[] parameters = ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+//string[] parameters = ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+//int[] intParams= Array.ConvertAll(parameters, int.Parse); // метод, который преобразует массив из одного типа данных в другой.
 
-int[,] array = GetMatrixArray(int.Parse(parameters[0]), int.Parse(parameters[1]), int.Parse(parameters[2]), int.Parse(parameters[3]));
+// или сделать рефакторинг
+int[] intParams= Array.ConvertAll(ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries), int.Parse); // метод, который преобразует массив из одного типа данных в другой.
+
+// int[,] array = GetMatrixArray(int.Parse(parameters[0]), int.Parse(parameters[1]), int.Parse(parameters[2]), int.Parse(parameters[3]));
+int[,] array = GetMatrixArray(intParams[0], intParams[1], intParams[2], intParams[3]);
 PrintMatrixArray(array);
 WriteLine();
 int[,] changedArray = ChangeElementsMatrixArray(array);
