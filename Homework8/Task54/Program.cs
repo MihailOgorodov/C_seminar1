@@ -15,8 +15,8 @@ int[] parameters = Array.ConvertAll(ReadLine()!.Split(" ", StringSplitOptions.Re
 int[,] matrixArray = GetMatrixArray(parameters[0], parameters[1], parameters[2], parameters[3]);
 PrintMatrixArray(matrixArray);
 WriteLine();
-int[,] array = MatrixSort(matrixArray);
-PrintMatrixArray(array);
+OrderArrayLines(matrixArray);
+PrintMatrixArray(matrixArray);
 
 
 
@@ -46,26 +46,21 @@ void PrintMatrixArray(int[,] inArray)
           }
 }
 
-int[,] MatrixSort(int[,] inArray1)
+void OrderArrayLines(int[,] inArray1)
 {
-          int[,] sortedArray = new int[inArray1.GetLength(0), inArray1.GetLength(1)];
           for (int i = 0; i < inArray1.GetLength(0); i++)
           {
                     for (int j = 0; j < inArray1.GetLength(1); j++)
                     {
-                              for (int k = inArray1.GetLength(1) - 1; k > j; k--)
+                              for (int k = 0; k < inArray1.GetLength(1) - 1; k++)
                               {
-                                        if (inArray1[i, k] < inArray1[i, k - 1])
+                                        if (inArray1[i, k] < inArray1[i, k + 1])
                                         {
-                                                  int temp = inArray1[i, k];
-                                                  inArray1[i, k] = inArray1[i, k - 1];
-                                                  inArray1[i, k - 1] = temp;
-                                                  sortedArray[i, j] = inArray1[i, j];
+                                                  int temp = inArray1[i, k + 1];
+                                                  inArray1[i, k + 1] = inArray1[i, k];
+                                                  inArray1[i, k] = temp;
                                         }
-                                        else sortedArray[i, j] = inArray1[i, j];
                               }
                     }
           }
-
-          return sortedArray;
 }
