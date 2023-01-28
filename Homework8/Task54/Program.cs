@@ -53,19 +53,19 @@ int[,] MatrixSort(int[,] inArray1)
           {
                     for (int j = 0; j < inArray1.GetLength(1); j++)
                     {
-                              for (int l = j + 1; l < inArray1.GetLength(1); l++)
+                              for (int k = inArray1.GetLength(1) - 1; k > j; k--)
                               {
-                                        if (inArray1[i, j] < inArray1[i, l])
+                                        if (inArray1[i, k] < inArray1[i, k - 1])
                                         {
-                                                  int temp = inArray1[i, j];
-                                                  inArray1[i, j] = inArray1[i, l];
-                                                  inArray1[i, l] = temp;
+                                                  int temp = inArray1[i, k];
+                                                  inArray1[i, k] = inArray1[i, k - 1];
+                                                  inArray1[i, k - 1] = temp;
                                                   sortedArray[i, j] = inArray1[i, j];
                                         }
                                         else sortedArray[i, j] = inArray1[i, j];
                               }
-
                     }
           }
+
           return sortedArray;
 }
