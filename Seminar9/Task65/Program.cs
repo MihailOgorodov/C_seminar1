@@ -12,15 +12,15 @@ PrintNumbers(parameters[0], parameters[1]);
 
 string GetNumbers(int minValue, int maxValue)
 {
-          return (maxValue == minValue)?maxValue.ToString():$"{GetNumbers(minValue, maxValue-1)}, {maxValue}";
+          return (maxValue == minValue) ? maxValue.ToString() : $"{GetNumbers(minValue, maxValue - 1)}, {maxValue}";
 }
 
 void PrintNumbers(int minValue1, int maxValue1)
 {
-          if(maxValue1 == minValue1) Write(maxValue1);
+          if (maxValue1 == minValue1) Write(maxValue1);
           else
           {
-                    PrintNumbers(minValue1, maxValue1 -1);
+                    PrintNumbers(minValue1, maxValue1 - 1);
                     Write($", {maxValue1}");
           }
 }
