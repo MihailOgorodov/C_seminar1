@@ -12,11 +12,23 @@ PrintNumbers(parameters[0], parameters[1]);
 
 string GetNumbers(int minValue, int maxValue)
 {
+          if (minValue > maxValue)
+          {
+                    int temp = minValue;
+                    minValue = maxValue;
+                    maxValue = temp;
+          }
           return (maxValue == minValue) ? maxValue.ToString() : $"{GetNumbers(minValue, maxValue - 1)}, {maxValue}";
 }
 
 void PrintNumbers(int minValue1, int maxValue1)
 {
+          if (minValue1 > maxValue1)
+          {
+                    int temp = minValue1;
+                    minValue1 = maxValue1;
+                    maxValue1 = temp;
+          }
           if (maxValue1 == minValue1) Write(maxValue1);
           else
           {
